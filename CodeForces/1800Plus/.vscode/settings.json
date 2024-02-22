@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "queue": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "ios": "cpp",
+        "iomanip": "cpp"
+    },
+    "cmake.configureOnOpen": false,
+    "julia.environmentPath": "/Users/carlosdelgado/Desktop/Coding/CodeForces/1800Plus"
+}

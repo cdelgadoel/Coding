@@ -1,0 +1,50 @@
+Primera semana
+
+Intro - por qué y para qué la progra competitiva
+Definición de problemas computacionales: entrada y salida
+Algoritmo: eso que transforma la entrada en la salida
+
+Todo el semestre tener en cuenta: qué hay en mi cajita de herramientas, qué agrego en cada problema que resuelvo
+Antes de que enseñarles técnicas de resolución de problemas, se deben sentir cómodos escribiendo código en cpp. 
+Esta semana quiero que tengan lo mínimo necesario para escribir códigos (aunque sea chiquitos), que los puedan correr, ver su resultado y que puedan debuggearlo. 
+
+Instalar C++
+Programar en VSCode
+
+Escribir un programa mínimo de cpp
+Correrlo y ver su output
+
+Sistema de archivos para sus programas
+
+0. Programa sin nada
+1. Hola mundo 
+2. entrada y salida
+3. Tipos de datos
+3.5 variables globales en cp
+4. condicionales
+6. arreglos
+5. Fors 
+6. Funciones 
+7. recursión
+8. Sort
+9. lower_bound, upper_bound
+10. struct
+11. Sort de struct 
+12. map, unordered_map
+13. Set, unordered_set
+14. Mencionar Stack, queue
+15. Mencionar heap
+¿Pointers?
+
+Problemas:
+1. Escribe un programa que reciba n números (también dado por el usuario), los ordene, y los imprima
+2. Una función que reciba reciba n líneas de datos de perritos (su edad y su estatura), que los ordene por edad y los imprima en orden.
+3. Lo mismo que el dos pero que los ordene por estatura
+4. Lo mismo que la 2, pero que solo imprima si su edad es mayor a 1 año
+5. Un programa que calcule en n-ésimo número de fibonacci
+6. Un programa que calcule n! (Recursivo e iterativo).
+7. Un programa que implemente selection sort 
+8. Un programa que implemente selection sort de forma recursiva
+9. Un programa que reciba 10^7 datos y que imprima los 5 más grandes
+10. Un programa que reciba n datos y encuentre la suma del subarreglo de suma máxima. 
+

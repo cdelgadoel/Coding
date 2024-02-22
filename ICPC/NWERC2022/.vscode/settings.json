@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.cs": "aspnetcorerazor",
+        "iomanip": "cpp",
+        "iostream": "cpp",
+        "ios": "cpp",
+        "ostream": "cpp",
+        "queue": "cpp"
+    },
+    "julia.environmentPath": "/Users/carlosdelgado/Desktop/Coding/ICPC/NWERC2022"
+}
