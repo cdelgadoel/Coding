@@ -35,55 +35,44 @@ void generaPath(int a, int b){
     int i, j;
     while(markedX < numX){
         ++s;
-        ////cout<<s<<endl;
-        //de la ini a extremo derecho
-        ////cout<<"arriba"<<endl;
         i = a-s;
         if(i >= 0 && i < n)
             for(j = b-s+1; j < b+s; ++j){
                 if(0 <= j && j < m && mat[i][j] == 'X'){
-                    ////cout<<"\tmarco en "<<i<<" "<<j<<endl;
                     paths[indxPath][markedX++] = cellsBeforeX + (j-(b-s+1)); 
                 }
             }
         cellsBeforeX += 2*s-1; //b+s-(b-s+1)
         //de la derecha hacia abajo
-        ////cout<<"derecha"<<endl;
         j = b+s;
         if(j >= 0 && j < m)
             for(i = a-s; i < a+s; ++i){
                 if(0 <= i && i < n && mat[i][j] == 'X'){
-                    ////cout<<"\tmarco en "<<i<<" "<<j<<endl;
                     paths[indxPath][markedX++] = cellsBeforeX + (i-(a-s)); 
                 }
             }
         cellsBeforeX += 2*s; //a+s-(a-s)
         
         //de abajo derecha a izquierda 
-        ////cout<<"abajo"<<endl;
         i = a+s;
         if(i >= 0 && i < n)
             for(j = b+s; j > b-s; --j){
                 if(0 <= j && j < m && mat[i][j] == 'X'){
-                    ////cout<<"\tmarco en "<<i<<" "<<j<<endl;
                     paths[indxPath][markedX++] = cellsBeforeX + ((b+s)-j); 
                 }
             }
         cellsBeforeX += 2*s; //b+s-(b-s)
 
         //de izquierda hacia arriba
-        ////cout<<"izq"<<endl;
         j = b-s;
         if(j >= 0 && j < m)
             for(i = a+s; i >= a-s; --i){
                 if(0 <= i && i < n && mat[i][j] == 'X'){
-                    ////cout<<"\tmarco en "<<i<<" "<<j<<endl;
                     paths[indxPath][markedX++] = cellsBeforeX + ((a+s)-i); 
                 }
             }
         cellsBeforeX += 2*s + 1; //a+s-(a-s) + 1
     }
-    ////cout<<"acabe "<<a<<" "<<b<<endl;
 }
 
 //it is guaranteed that two paths are always different 
@@ -124,35 +113,15 @@ int main(){
     loop(j, 0, m){
         generaPath(i, j);
     }
-    
-    //loop(i, 0, totalSize){
-        //cout<<i<<" "<<i/m<<" "<<(i- (i/m)*m)<<": ";
-    //    loop(j, 0, paths[i].size())
-            //cout<<paths[i][j]<<" \n"[j==paths[i].size()-1];
-    //}
     iota(indxPaths, indxPaths + totalSize, 0);
     sort(indxPaths, indxPaths + totalSize, comp);
-    //cout<<"indxPaths: ";
-    //loop(i, 0, totalSize)
-        //cout<<indxPaths[i]<<" \n"[i==totalSize-1];
-    
-    //cout<<"indxPaths: ";
-    //loop(i, 0, totalSize)
-        //cout<<indxPaths[i]<<" \n"[i==totalSize-1];
-    ////cout<<"acabe sort"<<endl;
     int need[totalSize], indxMax = -1;
     loop(i, 0, totalSize){
         need[indxPaths[i]] = 0;
         if(i > 0) need[indxPaths[i]] = minIndxDifferent(indxPaths[i], indxPaths[i-1]);
         if(i < totalSize-1) need[indxPaths[i]] = max(need[indxPaths[i]], minIndxDifferent(indxPaths[i], indxPaths[i+1]));
         if(indxMax == -1 || need[indxMax] < need[indxPaths[i]]) indxMax = indxPaths[i];
-        ////cout<<"bueno "<<indxPaths[i]<<" "<<indxPaths[i]/m<<" "<<(indxPaths[i]- (indxPaths[i]/m)*m)<<": "<<need[indxPaths[i]]<<endl;
     }
-
-    //cout<<"need: ";
-    //loop(i, 0, totalSize)
-    //    cout<<need[i]<<" \n"[i==totalSize-1];
-
     int totalIndxMax = 0;
     loop(i, 0, totalSize)
         if(need[indxMax] == need[i])

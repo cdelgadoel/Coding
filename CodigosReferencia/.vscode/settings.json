@@ -1,10 +1,14 @@
 {
     "files.associations": {
+        "*.cs": "aspnetcorerazor",
         "vector": "cpp",
         "iosfwd": "cpp",
         "iterator": "cpp",
         "tuple": "cpp",
         "variant": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "string": "cpp"
     }
 }

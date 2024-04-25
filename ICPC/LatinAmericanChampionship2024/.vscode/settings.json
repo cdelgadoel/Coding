@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.cs": "aspnetcorerazor",
+        "vector": "cpp",
+        "complex": "cpp"
+    }
+}

@@ -2,6 +2,10 @@
     "files.associations": {
         "*.cs": "aspnetcorerazor",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "stack": "cpp",
+        "vector": "cpp",
+        "ios": "cpp",
+        "set": "cpp"
     }
 }

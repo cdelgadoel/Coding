@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.cs": "aspnetcorerazor",
+        "iostream": "cpp",
+        "set": "cpp",
+        "ostream": "cpp",
+        "__tree": "cpp",
+        "ios": "cpp"
+    }
+}

@@ -12,122 +12,71 @@
 #include <queue>
 #include <set>
 #include <iomanip>
-
-using namespace std;
-
-typedef int64_t ll;
-typedef pair<int,int> pii;
-
-#define INF 1000000000000
+#define INF 1000000000000000000
 #define MOD 1000000007
-
 #define loop(i,a,b) for(int i = a; i < b; ++i)
-#define iloop(i,a,b) for(int i = a; i > b; --i)
+using namespace std;
+typedef int64_t ll;
+typedef pair<int,int> pi;
+typedef pair<ll,ll> pl;
+typedef vector<int> vi;
+typedef vector<ll> vl;
+typedef vector<pi> vpi;
 
-const int maxN = 3e6+5;
-int n, q;
-vector<pair<int, pii> > queries;
-vector<int> originalCollection;
-set<int> collection;
-unordered_map<int, int> newIndx;
+#define sz(a) a.size()
 
-ll bit[maxN];
-int limit;
-void update(int pos, ll x){
-    while(pos < limit){
-        bit[pos] = bit[pos] + x;
-        pos += pos&(-pos);
-    }
-}
+#define V vector
+#define pb push_back
+#define f first
+#define s second
 
-ll queryBIT(int pos){
-    ll suma = 0;
-    while(pos > 0){
-        suma = suma + bit[pos];
-        pos -= pos&(-pos);
-    }
-    return suma;
-}
-
-ll queryBIT(int pos1, int pos2){
-	return queryBIT(pos2) - queryBIT(pos1-1);
-}
-
-void readCollectionAndQueries(){
-    cin>>n>>q;
-    originalCollection.resize(n);
-    loop(i, 0, n)
-        cin>>originalCollection[i];
-    
-    queries.resize(q);
-    loop(i, 0, q){
-        cin>>queries[i].first;
-        if(queries[i].first == 1)
-            cin>>queries[i].second.first;
-        else
-            cin>>queries[i].second.first>>queries[i].second.second;
-    }
-}
-
-void coordinateCompression(){
-    vector<int> allIntegers;
-    for(int i : originalCollection)
-        allIntegers.push_back(i);
-    for (pair<int, pii> q : queries){
-        if(q.first == 1)
-            allIntegers.push_back(q.second.first);
-        else{
-            allIntegers.push_back(q.second.first);
-            allIntegers.push_back(q.second.second);
-        }
-    }
-    sort(allIntegers.begin(), allIntegers.end());
-    //ya tengo el set con todos los numeros ordenados
-    int i = 0;
-    for(int indx = 0; indx < allIntegers.size(); ++indx){
-        if(indx == 0 || (allIntegers[indx] != allIntegers[indx-1])){
-            newIndx[allIntegers[indx]] = ++i;
-        }
-    }
-    limit = i+1;
-}
+const int maxN = 500005;
 
 int main(){
     ios_base::sync_with_stdio(0); cin.tie(0);
+    if(fopen("case.txt", "r")) freopen("case.txt", "r", stdin);
 
-    readCollectionAndQueries();
-    coordinateCompression();
+    int n, q; cin>>n>>q;
+    vector<int> original(n);
+    multiset<pi> collection;
 
-    for(int x : originalCollection){
-        collection.insert(newIndx[x]);
-        update(newIndx[x], 1);
-    }
+    loop(i, 0, n)
+        cin>>original[i];
+    sort(original.begin(), original.end());
 
-    set<int> :: iterator it;
-    int elem;
+    loop(i, 0, n)
+        collection.insert(pi(original[i], i));
+
     loop(i, 0, q){
-        if(queries[i].first == 1){
-            elem = newIndx[queries[i].second.first];
-            it = collection.lower_bound(elem);
-            if(*it == elem)
-                continue;
-            else if(it == collection.end()){
-                collection.insert(elem);
-                update(elem, 1);
+        int type;
+        cin>>type;
+        if(type == 1){
+            int k; cin>>k;
+            auto nextGreater = collection.lower_bound(pi(k, 0));
+            if(nextGreater == collection.end()){
+                collection.insert(pi(k, n));
+                ++n;
+            }
+            else if(nextGreater->first != k){
+                int indxK = nextGreater -> second;
+                collection.erase(nextGreater);
+                collection.insert(pi(k, indxK));
+            }
+        }else{
+            int a,b; cin>>a>>b;
+            auto firstElement = collection.lower_bound(pi(a, 0));
+            auto end = collection.lower_bound(pi(b+1, 0));
+
+            if(firstElement == collection.end())
+                cout<<0<<"\n";
+            else if(end == collection.end()){
+                cout<< n - (firstElement->second) <<"\n";
             }
             else{
-                collection.insert(elem);
-                update(*it, -1);
-                update(elem, 1);
-                if(queryBIT(*it, *it) == 0)
-                    collection.erase(*it);
+                cout<< (end->second) - (firstElement->second)<<"\n";
             }
         }
-        else{
-            cout<<queryBIT(newIndx[queries[i].second.first],
-                        newIndx[queries[i].second.second])<<"\n";
-        }
     }
-
+    
     return 0;
 }

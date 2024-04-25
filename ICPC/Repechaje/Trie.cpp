@@ -1,70 +1,48 @@
-#include<iostream>
-
-using namespace std;
-
 struct Trie{
     struct Node{
         Node *children[26];
-        int initializedChildren;
         bool isEndOfWord;
     };
-
     struct Node *getNode() 
     { 
-        struct Node *pNode =  new Node; 
-
-        pNode -> isEndOfWord = false; 
+        struct Node *p =  new Node; 
+        p -> isEndOfWord = false; 
         for (int i = 0; i < 26; i++) 
-            pNode->children[i] = NULL; 
-
-        return pNode; 
+            p->children[i] = NULL; 
+        return p; 
     } 
-
     Node* root;
-
-    Trie(){
-        root = getNode();
-    }
-
+    Trie(){root = getNode();}
     void insert(string key) 
     { 
-        Node *pCrawl = root; 
+        Node *it = root; 
         for (int i = 0; i < key.length(); ++i) 
         { 
-            int index = key[i] - 'a'; 
-            if (!pCrawl->children[index]) 
-                pCrawl->children[index] = getNode(); 
-            pCrawl = pCrawl->children[index]; 
+            int idx = key[i] - 'a'; 
+            if (!it->children[idx]) 
+                it->children[idx] = getNode(); 
+            it = it->children[idx]; 
         } 
-    
-        // mark last node as leaf 
-        pCrawl->isEndOfWord = true; 
+        it->isEndOfWord = true; 
     } 
-
     bool search(string word){
-        Node *pCrawl = root; 
-        bool band = false;
+        Node *it = root; 
         for (int i = 0; i < word.length(); ++i) 
         { 
-            int index = word[i] - 'a'; 
-            if (!pCrawl->children[index]) 
-                return false; 
-            pCrawl = pCrawl->children[index]; 
+            int idx = word[i] - 'a'; 
+            if (!it->children[idx]) return false; 
+            it = it->children[idx]; 
         } 
-        return pCrawl->isEndOfWord;
+        return it->isEndOfWord;
     }
-    
     void remove(string word){
-        Node *pCrawl = root; 
-        bool band = false;
+        Node *it = root; 
         for (int i = 0; i < word.length(); ++i) 
         { 
             int index = word[i] - 'a'; 
-            if (!pCrawl->children[index]) 
-                break;
-            pCrawl = pCrawl->children[index]; 
+            if (!it->children[index]) break;
+            it = it->children[index]; 
         } 
-        pCrawl->isEndOfWord = false; 
+        it->isEndOfWord = false; 
     }
 };
-
