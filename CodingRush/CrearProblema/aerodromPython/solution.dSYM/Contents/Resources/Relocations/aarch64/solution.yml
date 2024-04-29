@@ -1,0 +1,17 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/carlosdelgado/Desktop/Coding/CodingRush/CrearProblema/carpetaBase copy/solution'
+relocations:
+  - { offsetInCU: 0x108, offset: 0x108, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003C38, symSize: 0x240 }
+  - { offsetInCU: 0x110, offset: 0x110, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIjEE, symObjAddr: 0x290, symBinAddr: 0x100003F2C, symSize: 0x0 }
+  - { offsetInCU: 0x3237, offset: 0x3237, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xE8D8, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x354D, offset: 0x354D, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIjEE, symObjAddr: 0x290, symBinAddr: 0x100003F2C, symSize: 0x0 }
+  - { offsetInCU: 0x3567, offset: 0x3567, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedImEE, symObjAddr: 0x291, symBinAddr: 0x100003F2D, symSize: 0x0 }
+  - { offsetInCU: 0x3581, offset: 0x3581, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIyEE, symObjAddr: 0x292, symBinAddr: 0x100003F2E, symSize: 0x0 }
+  - { offsetInCU: 0x35AB, offset: 0x35AB, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_solution.cpp, symObjAddr: 0x27C, symBinAddr: 0x100003EB4, symSize: 0x14 }
+  - { offsetInCU: 0x35B3, offset: 0x35B3, size: 0x8, addend: 0x0, symName: __ZNSt8__detail30__integer_to_chars_is_unsignedIjEE, symObjAddr: 0x290, symBinAddr: 0x100003F2C, symSize: 0x0 }
+  - { offsetInCU: 0x35D3, offset: 0x35D3, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x240, symBinAddr: 0x100003E78, symSize: 0x3C }
+  - { offsetInCU: 0x35DB, offset: 0x35DB, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_solution.cpp, symObjAddr: 0x27C, symBinAddr: 0x100003EB4, symSize: 0x14 }
+  - { offsetInCU: 0x35CF, offset: 0x35CF, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003C38, symSize: 0x240 }
+  - { offsetInCU: 0x35D7, offset: 0x35D7, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x240, symBinAddr: 0x100003E78, symSize: 0x3C }
+...

@@ -4,62 +4,70 @@
 
 using namespace std;
 
-class trie{
-    struct node{
+struct Trie{
+    struct Node{
+        Node *children[26];
         bool isEndOfWord;
-        node* children[26];
     };
-
-    node* getNode(){
-        node* a = new node;
-        a -> isEndOfWord = false;
-        
-        for(int i = 0; i < 26; ++i){
-            a-> children[i] = NULL;
-        }
-        
-       return a;
+    struct Node *getNode() 
+    { 
+        struct Node *p =  new Node; 
+        p -> isEndOfWord = false; 
+        for (int i = 0; i < 26; i++) 
+            p->children[i] = NULL; 
+        return p; 
+    } 
+    Node* root;
+    Trie(){root = getNode();}
+    void insert(const string &key) 
+    { 
+        Node *it = root; 
+        for (int i = 0; i < key.length(); ++i) 
+        { 
+            int idx = key[i] - 'a'; 
+            if (!it->children[idx]) 
+                it->children[idx] = getNode(); 
+            it = it->children[idx]; 
+        } 
+        it->isEndOfWord = true; 
+    } 
+    bool search(string word){
+        Node *it = root; 
+        for (int i = 0; i < word.length(); ++i) 
+        { 
+            int idx = word[i] - 'a'; 
+            if (!it->children[idx]) return false; 
+            it = it->children[idx]; 
+        } 
+        return it->isEndOfWord;
     }
-
-    node* raiz;
-
-    public:
-        trie(){ raiz = getNode();}
-
-        void insert(string word){
-            node* it = raiz;
-            for(char c : word){
-                if( it -> children[c - 'a'] == NULL){
-                    it -> children[c - 'a'] = getNode();
-                }
-                it = it -> children[c-'a'];
+    void remove(string word){
+        Node *it = root; 
+        for (int i = 0; i < word.length(); ++i) 
+        { 
+            int index = word[i] - 'a'; 
+            if (!it->children[index]) break;
+            it = it->children[index]; 
+        } 
+        it->isEndOfWord = false; 
+    }
+    void clear(Node* u){
+        for(int i = 0; i < 26; ++i){
+            if(u->children[i]){
+                clear(u->children[i]);
+                delete u->children[i];
+                u->children[i] = NULL;
             }
-            it ->isEndOfWord = true;
         }
-
-        bool busca(string word){
-            node* it = raiz;
-            int i = 0;
-            for(char c: word){
-                if(it -> children[ c-'a'] == NULL)
-                    break;
-                else{
-                    it  = it->children[ c -'a'];
-                    ++i;
-                }
-            }
-            return i == word.size() && it->isEndOfWord;
-        }
-    
+    }
 };
 
 
 int main(){
-    trie a; 
+    Trie a; 
     a.insert("hola");
-    cout<<a.busca("hola")<<endl;
-
-    
+    cout<<a.search("hola")<<endl;
+    a.remove("hola");
+    cout<<a.search("hola");
     return 0;
-
 }
