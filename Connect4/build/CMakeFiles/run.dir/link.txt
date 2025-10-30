@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/run.dir/src/Bitboard.cpp.o CMakeFiles/run.dir/src/ConnectFour.cpp.o CMakeFiles/run.dir/src/main.cpp.o CMakeFiles/run.dir/src/math2DVector.cpp.o -o run 

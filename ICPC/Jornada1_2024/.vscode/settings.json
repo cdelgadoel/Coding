@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.cs": "aspnetcorerazor",
+        "initializer_list": "cpp",
+        "map": "cpp",
+        "queue": "cpp",
+        "set": "cpp",
+        "stack": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "ios": "cpp",
+        "iomanip": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}

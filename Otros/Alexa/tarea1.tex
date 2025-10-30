@@ -1,0 +1,488 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+
+\title{Homework 1 CS}
+\author{Alexa Jeressi Martínez Soto}
+\date{January 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Logic}
+\subsection*{9. Converse and Contrapositive}
+
+Give the converse and the contrapositive of each of the following English sentences:
+
+\begin{enumerate}
+    \item[(a)] If you are good, Santa brings you toys.
+    \\ 
+    \textbf{Converse:} If Santa brings you toys, then you are good
+    \\ 
+    \textbf{Contrapositive:} If Santa doesn't bring you toys, then you are not good.
+    
+    \item[(b)] If the package weighs more than one ounce, then you need extra postage.
+    \\ 
+    \textbf{Converse:} If you need extra postage, then the package weights more than one ounce
+    \\ 
+    \textbf{Contrapositive:} If you do not need extra postage, then the package doesn't weight more than one ounce.
+    
+    \item[(c)] If I have a choice, I don't eat eggplant
+    \\ 
+    \textbf{Converse:} If I don’t eat eggplant, then I have a choice
+    \\ 
+    \textbf{Contrapositive:} If I eat eggplant, then I don´t have a choice
+\end{enumerate}
+
+\subsection*{2. Truth Tables}
+
+\subsubsection*{(a) Construct truth tables to demonstrate that $\neg(p \land q)$ is not logically equivalent to $(\neg p) \land (\neg q)$}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/truth_tables_a.jpeg}
+\end{figure}
+
+\subsubsection*{(b) Construct truth tables to demonstrate that $\neg(p \lor q)$ is not logically equivalent to $(\neg p) \lor (\neg q)$}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/truth_tables_b.jpeg}
+\end{figure}
+
+\subsubsection*{(c) Construct truth tables to demonstrate the validity of both DeMorgan’s Laws.}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/truth_tables_c.jpeg}
+\end{figure}
+
+
+\subsection*{8. Basic Laws}
+There are two additional basic laws of logic, involving the two expressions $p \land F$ and $p \lor T$. What are the missing laws? Show that your answers are, in fact, laws.
+
+
+
+\section{Sets}
+
+\subsection*{2. Compute Set Operations (Section 2.1)}
+
+Compute $A \cup B$, $A \cap B$, and $A \setminus B$ for each of the following pairs of sets:
+
+\begin{enumerate}
+    \item[(a)] $A = \{a, b, c\}$, $B = \emptyset$
+    \item[(b)] $A = \{1,2,3,4,5\}$, $B = \{2,4,6,8,10\}$
+    \item[(c)] $A = \{a, b\}$, $B = \{a, b, c, d\}$
+    \item[(d)] $A = \{a, b, \{a, b\}\}$, $B = \{\{a\}, \{a, b\}\}$
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_2.jpeg}
+\end{figure}
+
+
+
+\subsection*{3. Set Operations with Natural Numbers}
+
+Recall that $\mathbb{N}$ represents the set of natural numbers. That is, $\mathbb{N} = \{0,1,2,3,\dots\}$. Let $X = \{n \in \mathbb{N} \mid n \geq 5\}$, let $Y = \{n \in \mathbb{N} \mid n \leq 10\}$, and let $Z = \{n \in \mathbb{N} \mid n \textrm{ is an even number}\}$. Find each of the following sets:
+
+\begin{enumerate}
+    \item[(a)] $X \cap Y$
+    \item[(b)] $X \cup Y$
+    \item[(c)] $X \setminus Y$
+    \item[(d)] $\mathbb{N} \setminus Z$
+    \item[(e)] $X \cap Z$
+    \item[(f)] $Y \cap Z$
+    \item[(g)] $Y \cup Z$
+    \item[(h)] $Z \setminus \mathbb{N}$
+\end{enumerate}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_3.jpeg}
+\end{figure}
+
+
+
+\subsection*{4. Power Set Calculation}
+
+Find $\mathcal{P}(\{1,2,3\})$. (It has eight elements.)
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_4.jpeg}
+\end{figure}
+
+\subsection*{5. Set Membership and Subset Relations}
+
+Assume that $a$ and $b$ are entities and that $a \neq b$. Let $A$ and $B$ be the sets defined by $A = \{a, \{b\}, \{a, b\}\}$ and $B = \{a, b, \{a, \{b\}\}\}$. Determine whether each of the following statements is true or false. Explain your answers.
+
+\begin{enumerate}
+    \item[(a)] $b \in A$ \textbf{False:} A contains a subset $b$ not a element $b$.
+    \item[(b)] $\{a, b\} \subseteq A$ \textbf{False:} $b$ is not a element of $A$.
+    \item[(c)] $\{a, b\} \subseteq B$ \textbf{True:} $a \in B$ and $b \in B$
+    \item[(d)] $\{a, b\} \in B$ \textbf{False:} the subset ${a,b}$ is not an element of $B$. 
+    \item[(e)] $\{a, \{b\}\} \in A$ \textbf{False:} The subset $\{a, \{b\}\}$ is not an element of $A$
+    \item[(f)] $\{a, \{b\}\} \in B$ \textbf{True:} The subset $\{a, \{b\}\}$ is an element of $B$
+\end{enumerate}
+
+
+\subsection*{8. Properties of Set Operations}
+
+If $A$ is any set, what can you say about $A \cup A$? About $A \cap A$? About $A \setminus A$? Why?
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_8.jpeg}
+\end{figure}
+
+\subsection*{9. Subset Relations and Set Operations}
+
+Suppose that $A$ and $B$ are sets such that $A \subseteq B$. What can you say about $A \cup B$? About $A \cap B$? About $A \setminus B$? Why?
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_9.jpeg}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_9_1.jpeg}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_9_2.jpeg}
+\end{figure}
+
+\subsection*{10. Intersection and Subsets}
+
+Suppose that $A$, $B$, and $C$ are sets. Show that $C \subseteq A \cap B$ if and only if $(C \subseteq A) \land (C \subseteq B)$. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_10.jpeg}
+\end{figure}
+
+
+
+\subsection*{5. DeMorgan’s Laws Verification (Section 2.2)}
+
+Verify the second of DeMorgan’s Laws for sets, $\overline{A \cap B} = \overline{A} \cup \overline{B}$. For each step in your verification, state why that step is valid.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_2.2_5.jpeg}
+\end{figure}
+
+\subsection*{8. Properties of Set Operations}
+
+Show that $A \cup (A \cap B) = A$ for any sets $A$ and $B$.
+
+\subsection*{9. Simplification of Set Expressions}
+
+Let $X$ and $Y$ be sets. Simplify each of the following expressions. Justify each step in the simplification with one of the rules of set theory.
+
+\begin{enumerate}
+    \item[(a)] $X \cup (Y \cup X)$
+    \item[(b)] $(X \cap Y) \cap \overline{X}$
+    \item[(c)] $(X \cup Y) \cap \overline{Y}$
+    \item[(d)] $(X \cup Y) \cup (X \cap Y)$
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_2.2_9.jpeg}
+\end{figure}
+
+
+\subsection*{10. Complement and Intersection Simplifications}
+
+Let $A$, $B$, and $C$ be sets. Simplify each of the following expressions. In your answer, the complement operator should only be applied to the individual sets $A$, $B$, and $C$.
+
+\begin{enumerate}
+    \item[(a)] $\overline{A \cup B \cup C}$
+    \item[(b)] $\overline{A \cup B \cap C}$
+    \item[(c)] $\overline{A \cup B}$
+    \item[(d)] $B \cap \overline{C}$
+    \item[(e)] $A \cap \overline{B \cap C}$
+    \item[(f)] $A \cap \overline{A \cup B}$
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_2.2_10.jpeg}
+\end{figure}
+
+\subsection*{11. Generalized DeMorgan’s Law}
+
+Use induction to prove the following generalized DeMorgan’s Law for set theory: For any natural number $n \geq 2$ and for any sets $X_1, X_2, \dots, X_n$,
+\[
+\overline{X_1 \cap X_2 \cap \dots \cap X_n} = \overline{X_1} \cup \overline{X_2} \cup \dots \cup \overline{X_n}
+\]
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagenes/sets_2.2_11.jpeg}
+\end{figure}
+
+\section{Functions and relations}
+
+\subsection*{1. Cartesian Products}
+
+Let $A = \{1,2,3,4\}$ and let $B = \{a, b, c\}$. Find the sets $A \times B$ and $B \times A$.
+
+\[
+A \times B = \{(1, a), (1, b), (1, c), (2, a), (2, b), (2, c), (3, a), (3, b), (3, c), (4, a), (4, b), (4, c)\}
+\]
+
+\[
+B \times A = \{(a, 1), (a, 2), (a, 3), (a, 4), (b, 1), (b, 2), (b, 3), (b, 4), (c, 1), (c, 2), (c, 3), (c, 4)\}
+\]
+
+\subsection*{2. Function Composition}
+
+Let $A$ be the set $\{a, b, c, d\}$. Let $f$ be the function from $A$ to $A$ given by the set of ordered pairs $\{(a, b), (b, b), (c, a), (d, c)\}$, and let $g$ be the function given by the set of ordered pairs $\{(a, b), (b, c), (c, d), (d, d)\}$. Find the set of ordered pairs for the composition $g \circ f$.
+
+\[g(f(a)) = g(b) = c\]
+\[g(f(b)) = g(b) = c\]
+\[g(f(c)) = g(a) = b \]
+\[g(f(d)) = g(c) = d \]
+Then
+\[g \circ f = \{(a, c), (b, c), (c, b), (d, d)\}\]
+
+
+\subsection*{3. Functions from $A$ to $B$}
+
+Let $A = \{a, b, c\}$ and let $B = \{0, 1\}$. Find all possible functions from $A$ to $B$. Give each function as a set of ordered pairs. (Hint: Every such function corresponds to one of the subsets of $A$.)
+
+There are eight of them since each element is mapped to $0$ or $1$.
+
+\begin{itemize}
+    \item \( f_{\emptyset} = \{(a, 0), (b, 0), (c, 0)\} \)
+    \item \( f_{\{a\}} = \{(a, 1), (b, 0), (c, 0)\} \)
+    \item \( f_{\{b\}} = \{(a, 0), (b, 1), (c, 0)\} \)
+    \item \( f_{\{c\}} = \{(a, 0), (b, 0), (c, 1)\} \)
+    \item \( f_{\{a, b\}} = \{(a, 1), (b, 1), (c, 0)\} \)
+    \item \( f_{\{a, c\}} = \{(a, 1), (b, 0), (c, 1)\} \)
+    \item \( f_{\{b, c\}} = \{(a, 0), (b, 1), (c, 1)\} \)
+    \item \( f_{\{a, b, c\}} = \{(a, 1), (b, 1), (c, 1)\} \)
+\end{itemize}
+
+\subsection*{4. Onto and One-to-One Functions}
+
+Consider the functions from $\mathbb{Z}$ to $\mathbb{Z}$ which are defined by the following formulas. Decide whether each function is onto and whether it is one-to-one; prove your answers.
+
+\begin{enumerate}
+    \item[(a)] $f(n) = 2n$ \\
+    \textbf{Is onto?} No. \\
+    \textbf{Proof:} 1 is not covered by any number in the input set. Prove by contradiction, if $a \in \mathbb{Z}$ such that $f(a) = 1$, then $2a = 1$. That is a contradiction since $2a$ is even and 1 is odd. \\
+    \textbf{Is one-to-one?} Yes. \\
+    \textbf{Proof:} Let $a, b \in \mathbb{Z}$ such that $f(a) = f(b)$. Then $2a = 2b$, which implies $2(a - b) = 0$, hence $(a - b) = 0$, thus $a = b$.
+
+    \item[(b)] $g(n) = n + 1$ \\
+    \textbf{Is onto?} Yes. \\
+    \textbf{Proof:} For every $m \in \mathbb{Z}$, there exists $n = m - 1 \in \mathbb{Z}$ such that $g(n) = m$. \\
+    \textbf{Is one-to-one?} Yes. \\
+    \textbf{Proof:} Let $a, b \in \mathbb{Z}$ such that $g(a) = g(b)$. Then $a + 1 = b + 1$, which implies $a = b$.
+
+    \item[(c)] $h(n) = n^2 + n + 1$ \\
+    \textbf{Is onto?} No. \\
+    \textbf{Proof:} $n^2 + n + 1 = (n+\frac{1}{2})^2+\frac{3}{4} \geq \frac{3}{4}$ for any real number, and in particular, for integers as well. Then 0 is not covered by any number in the input set, since the expression is bigger than zero for all integers. \\
+    \textbf{Is one-to-one?} No. \\
+    \textbf{Proof:} For $n = 1$ and $n = -2$, we have $h(1) = 1^2+1+1 =3$, and $h(-2) = (-2)^2+(-2)+1= 4-2+1=3$ so $h(1)=h(-2)$ and $h$ is not one-to-one.
+
+    \item[(d)] $s(n) = \begin{cases} 
+    n/2, & \text{if } n \text{ is even} \\ 
+    (n+1)/2, & \text{if } n \text{ is odd} 
+    \end{cases}$ \\
+    \textbf{Is onto?} Yes. \\
+    \textbf{Proof:} For every $m$, $s(2m) = \frac{2m}{2} = m$. \\
+    \textbf{Is one-to-one?} No. \\
+    \textbf{Proof:} Consider $n = 1$ and $n = 2$. Then $s(1) = 1$ and $s(2) = 1$, so $s(1)=s(2)$ and $s$ is not one-to-one.
+\end{enumerate}
+
+\subsection*{1. Binary Relations on a Set}
+
+For a finite set, it is possible to define a binary relation on the set by listing the elements of the relation, considered as a set of ordered pairs. Let $A$ be the set $\{a, b, c, d\}$, where $a, b, c,$ and $d$ are distinct. Consider each of the following binary relations on $A$. Is the relation reflexive? Symmetric? Antisymmetric? Transitive? Is it a partial order? An equivalence relation?
+
+\begin{enumerate}
+    \item[(a)] $\mathcal{R} = \{(a, b), (a, c), (a, d)\}$.
+    \item[(b)] $\mathcal{S} = \{(a, a), (b, b), (c, c), (d, d), (a, b), (b, a)\}$.
+    \item[(c)] $\mathcal{T} = \{(b, b), (c, c), (d, d)\}$.
+    \item[(d)] $\mathcal{C} = \{(a, b), (b, c), (a, c), (d, d)\}$.
+    \item[(e)] $\mathcal{D} = \{(a, b), (b, a), (c, d), (d, c)\}$.
+\end{enumerate}
+
+Answers:
+\begin{enumerate}
+    \item[(a)] \( R = \{(a, b), (a, c), (a, d)\} \)
+    \begin{itemize}
+        \item \textbf{Reflexive}: No, $(a,a), (b,b), (c,c), (d,d) \notin \mathcal{R}$.
+        \item \textbf{Symmetric}: No, $(b,a) \notin \mathcal{R}$, but $(a,b)\in \mathcal{R}$).
+        \item \textbf{Antisymmetric}: Yes, there are 
+ no \((x, y) \) and \((y, x) \) with \( x \neq y \) that are part of the relation.
+        \item \textbf{Transitive}: Yes, there is no pair that contradicts transitivity.
+        \item \textbf{Partial Order}: No, relation is not reflexive.
+        \item \textbf{Equivalence Relation}: No, relation is not reflexive nor symmetric.
+    \end{itemize}
+
+    \item[(b)] \( S = \{(a, a), (b, b), (c, c), (d, d), (a, b), (b, a)\} \)
+    \begin{itemize}
+        \item \textbf{Reflexive}: Yes, all elements relate to themselves.
+        \item \textbf{Symmetric}: Yes, for every \((x, y) \), \((y, x) \) is in the relation.
+        \item \textbf{Antisymmetric}: No, since \((a, b) \) and \((b, a) \) are both in the relation.
+        \item \textbf{Transitive}: Yes, no pair contradicts transitivity. 
+        \item \textbf{Partial Order}: No, not antisymmetric.
+        \item \textbf{Equivalence Relation}: Yes, relation is reflexive, symmetric, and transitive.
+    \end{itemize}
+
+    \item[(c)] \( T = \{(b, b), (c, c), (d, d)\} \)
+    \begin{itemize}
+        \item \textbf{Reflexive}: No, \( (a, a) \) is missing.
+        \item \textbf{Symmetric}: Yes, only reflexive pairs present.
+        \item \textbf{Antisymmetric}: Yes.
+        \item \textbf{Transitive}: Yes.
+        \item \textbf{Partial Order}: No, relation is not reflexive.
+        \item \textbf{Equivalence Relation}: No, relation is not reflexive.
+    \end{itemize}
+
+    \item[(d)] \( C = \{(a, b), (b, c), (a, c), (d, d)\} \)
+    \begin{itemize}
+        \item \textbf{Reflexive}: No, $(a, a)$,$(b,b)$ and $(c, c)$ are missing.
+        \item \textbf{Symmetric}: No, $(a,b)$ is present, but $(b,a)$ is not.
+        \item \textbf{Antisymmetric}: Yes, no inverse distinct pairs present, except $(d,d)$.
+        \item \textbf{Transitive}: Yes, no pair contradicts it.
+        \item \textbf{Partial Order}: No, fails reflexivity.
+        \item \textbf{Equivalence Relation}: No, fails reflexivity and symmetry.
+    \end{itemize}
+
+    \item[(e)] \( D = \{(a, b), (b, a), (c, d), (d, c)\} \)
+    \begin{itemize}
+        \item \textbf{Reflexive}: No, self-pairs are missing.
+        \item \textbf{Symmetric}: Yes, each pair has its inverse.
+        \item \textbf{Antisymmetric}: No, $(a,b)$ and $(b,a)$ are in the relation.
+        \item \textbf{Transitive}: No, $(a,b),(b,a)$ are there, but $(a,a)$ is not.
+        \item \textbf{Partial Order}: No, fails reflexivity, antisymmetry, and transitivity.
+        \item \textbf{Equivalence Relation}: No, fails reflexivity and transitivity.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{2. Equivalence Relation from a Partition}
+
+Let $A$ be the set $\{1,2,3,4,5,6\}$. Consider the partition of $A$ into the subsets $\{1,4,5\}$, $\{3\}$, and $\{2,6\}$. Write out the associated equivalence relation on $A$ as a set of ordered pairs.
+
+The associated equivalence relation $R$ on $A$ is given by the set of ordered pairs:
+
+
+\[
+R = \{(1, 1), (1, 4), (1, 5), (4, 1), (4, 4), (4, 5), (5, 1), (5, 4), (5, 5), (3, 3), (2, 2), (2, 6), (6, 2), (6, 6)\}
+\]
+
+To construct it, we just need to relate all elements in the partition to each other. 
+
+\subsection*{3. Relations on People}
+
+Consider each of the following relations on the set of people. Is the relation reflexive? Symmetric? Transitive? Is it an equivalence relation?
+
+\begin{enumerate}
+    \item[(a)] $x$ is related to $y$ if $x$ and $y$ have the same biological parents.
+    \item[(b)] $x$ is related to $y$ if $x$ and $y$ have at least one biological parent in common.
+    \item[(c)] $x$ is related to $y$ if $x$ and $y$ were born in the same year.
+    \item[(d)] $x$ is related to $y$ if $x$ is taller than $y$.
+    \item[(e)] $x$ is related to $y$ if $x$ and $y$ have both visited Honolulu.
+\end{enumerate}
+
+Answers:
+\begin{enumerate}
+    \item[(a)] \( x \) is related to \( y \) if \( x \) and \( y \) have the same biological parents.
+    \begin{itemize}
+        \item \textbf{Reflexive}: Yes, because every person has the same biological parents as themselves.
+        \item \textbf{Symmetric}: Yes, if \( x \) and \( y \) have the same biological parents, then \( y \) and \( x \) also have the same biological parents.
+        \item \textbf{Transitive}: Yes, if \( x \) and \( y \) have the same biological parents, and \( y \) and \( z \) have the same biological parents, then \( x \) and \( z \) also have the same biological parents.
+        \item \textbf{Equivalence Relation}: Yes, because it is reflexive, symmetric, and transitive. The partition is on people that are siblings from the same parents. 
+    \end{itemize}
+
+    \item[(b)] \( x \) is related to \( y \) if \( x \) and \( y \) have at least one biological parent in common.
+    \begin{itemize}
+        \item \textbf{Reflexive}: Yes, because every person has at least one biological parent in common with themselves.
+        \item \textbf{Symmetric}: Yes, if \( x \) and \( y \) share a parent, then \( y \) and \( x \) also share a parent.
+        \item \textbf{Transitive}: No, suppose $x$ has $A,B$ as their parents, $y$ has $A,C$ as their parents, and $z$ has $C, D$ as their parents. Then $x$ and $y$ are related, $y$ and $z$ are related, but $x$ and $z$ are not.
+        \item \textbf{Equivalence Relation}: No, because it is not transitive.
+    \end{itemize}
+
+    \item[(c)] \( x \) is related to \( y \) if \( x \) and \( y \) were born in the same year.
+    \begin{itemize}
+        \item \textbf{Reflexive}: Yes, every person was born in the same year as themselves.
+        \item \textbf{Symmetric}: Yes, if \( x \) and \( y \) were born in the same year, then \( y \) and \( x \) were born in the same year.
+        \item \textbf{Transitive}: Yes, if \( x \) and \( y \) were born in the same year, and \( y \) and \( z \) were born in the same year, then \( x \) and \( z \) were also born in the same year.
+        \item \textbf{Equivalence Relation}: Yes, because it is reflexive, symmetric, and transitive. The partition is on the group of people that were born the same year. 
+    \end{itemize}
+
+    \item[(d)] $x$ is related to $y$ if $x$ is taller than $y$.
+    \begin{itemize}
+        \item \textbf{Reflexive}: No, no person is taller than themselves.
+        \item \textbf{Symmetric}: No, if \( x \) is taller than \( y \), \( y \) is not taller than \( x \).
+        \item \textbf{Transitive}: Yes, if \( x \) is taller than \( y \), and \( y \) is taller than \( z \), then \( x \) is taller than \( z \).
+        \item \textbf{Equivalence Relation}: No, because it is not reflexive nor symmetric.
+    \end{itemize}
+
+    \item[(e)] \( x \) is related to \( y \) if \( x \) and \( y \) have both visited Honolulu.
+    \begin{itemize}
+        \item \textbf{Reflexive}: No, if $x$ has not visited Honolulu, then $(x,x)$ is not in the relation since that person hasn't visited it.
+        \item \textbf{Symmetric}: Yes, if \( x \) and \( y \) have both visited Honolulu, then \( y \) and \( x \) have both visited Honolulu.
+        \item \textbf{Transitive}: Yes, if \( x \) and \( y \) have visited Honolulu, and \( y \) and \( z \) have also, then \( x \) and \( z \) have both visited Honolulu.
+        \item \textbf{Equivalence Relation}: No, because the relation is not reflexive.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{8. Total Order on $\mathbb{N} 	imes \mathbb{N}$}
+
+Consider the set $\mathbb{N} \times \mathbb{N}$, which consists of all ordered pairs of natural numbers. Since $\mathbb{N} \times \mathbb{N}$ is a set, it is possible to have binary relations on $\mathbb{N} \times \mathbb{N}$. Such a relation would be a subset of $(\mathbb{N} \times \mathbb{N}) \times (\mathbb{N} \times \mathbb{N})$. Define a binary relation $\preceq$ on $\mathbb{N} \times \mathbb{N}$ such that for $(m,n)$ and $(k,\ell)$ in $\mathbb{N} \times \mathbb{N}$, $(m,n) \preceq (k,\ell)$ if and only if either $m < k$ or $((m = k) \land (n \leq \ell))$. Which of the following are true?
+
+\begin{enumerate}
+    \item[(a)] $(2,7) \preceq (5,1)$. This is true since $2<5$.
+    \item[(b)] $(8,5) \preceq (8,0)$. False since $8\not<8$ and $8=8$ but $5 \not\leq 0$.
+    \item[(c)] $(0,1) \preceq (0,2)$ True since $0=0$ and $1\leq2$.
+    \item[(d)] $(17,17) \preceq (17,17)$. True since $17=17$ and $17\leq17$.
+\end{enumerate}
+
+Show that $\preceq$ is a total order on $\mathbb{N} \times \mathbb{N}$.
+
+We need to show that the relation is reflexive, antisymmetric, transitive, and total.
+\\\\
+\textbf{Reflexivity:} 
+$(a,b) \preceq (a,b)$ since $a = a$ and $b \leq b$. Thus, $\preceq$ is reflexive.
+\\\\
+\textbf{Antisymmetry:} 
+Suppose $(a,b) \preceq (c,d)$ and $(c,d) \preceq (a,b)$. If $a\neq c$, then we would have $a<c$ and $c<a$ at the same time, which is a contradiction. then we have $b<=d$ and $d<=b$. If they were different, one of them would not hold the same reason as with $a$ and $c$. Thus, $a=c$ and $b=d$, meaning the relation is antisymmetric.
+\\\\
+\textbf{Transitivity:} 
+Suppose $(a,b) \preceq (c,d)$ and $(c,d) \preceq (e,f)$. We will show that $(a,b) \preceq (c,d)$. First note that the relation on pairs $(x,y)\preceq(w,z)$ means $x\leq w$. We have different cases:
+\begin{enumerate}
+    \item[(a)] if $a<c$, then since $c\leq e$, we have $a<e$ and $(a,b) \preceq (e,f)$.
+    \item[(b)] if $a=c$, then $b\leq d$.
+    \begin{enumerate}
+    \item[(b.1)] if $c<e$, then $a=c<e$, and $a<e$. With that $(a,b) \preceq (e,f)$.
+    \item[(b.2)] if $c=e$ and $d\leq f$. Then $a=c=e$, and $b\leq d \leq f$. With that, $a=e$ and $b\leq f$ and $(a,b) \preceq (e,f)$.
+    \end{enumerate}
+    
+\end{enumerate}
+In all cases, transitivity holds. 
+\\\\
+\textbf{Totality:} 
+We have to prove that if any $(a,b)$, $(c,d)$ in $\mathbb{N} \times \mathbb{N}$ then either  $(a,b) \preceq (c,d)$ or $(c,d) \preceq (a,b)$. We can divide into four different cases:
+\begin{enumerate}
+    \item[(a)] $a < c$
+    \item[(b)] $a=c, b\leq d$
+    \item[(c)] $a=c, b > d$
+    \item[(d)] $a>c$
+\end{enumerate}
+
+For the first two cases, $(a,b) \preceq (c,d)$, and for the last two, $(c,d) \preceq (a,b)$. The cases are derived from the fact that for any two real numbers $x,y$ then one and only one of the following hold: $x<y$, $x=y$, or $x>y$.
+\end{document}

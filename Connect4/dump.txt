@@ -1,0 +1,114 @@
+class ConnectFourSimulator
+{
+
+private:
+    char game[rows][columns];
+    int currentPlayer;
+    int nextAvailableRow[columns];
+    math2DVector lastCoordinatePlayed;
+
+    bool validCoordinates(math2DVector point)
+    {
+        return point.x >= 0 && point.x < rows && point.y >= 0 && point.y < columns;
+    }
+
+    int checkConnectedInDirection(math2DVector direction)
+    {
+        math2DVector rightLimit = lastCoordinatePlayed, leftLimit = lastCoordinatePlayed;
+        int connected = 1;
+
+        math2DVector next = rightLimit + direction;
+        while (validCoordinates(next) && game[next.x][next.y] == game[rightLimit.x][rightLimit.y])
+        {
+            rightLimit = rightLimit + direction;
+            next = rightLimit + direction;
+            ++connected;
+        }
+
+        next = leftLimit - direction;
+        while (validCoordinates(next) && game[next.x][next.y] == game[leftLimit.x][leftLimit.y])
+        {
+            leftLimit = leftLimit - direction;
+            next = leftLimit - direction;
+            ++connected;
+        }
+        return connected;
+    }
+
+    bool checkHorizontalWinner()
+    {
+        return checkConnectedInDirection(math2DVector(0, 1)) >= consecutiveChipsNeededToWin;
+    }
+
+    bool checkVerticalWinner()
+    {
+        return checkConnectedInDirection(math2DVector(1, 0)) >= consecutiveChipsNeededToWin;
+    }
+
+    bool checkDiagonalWinner()
+    {
+        return checkConnectedInDirection(math2DVector(1, 1)) >= consecutiveChipsNeededToWin || checkConnectedInDirection(math2DVector(1, -1)) >= consecutiveChipsNeededToWin;
+    }
+
+    // returns true if the current player wins
+    bool lastPlayerWon()
+    {
+        return checkVerticalWinner() || checkHorizontalWinner() || checkDiagonalWinner();
+    }
+
+    bool isColumnFilled(int col)
+    {
+        return nextAvailableRow[col] == rows;
+    }
+
+public:
+    void cleanGame()
+    {
+        memset(game, '.', sizeof(game));
+        std::fill(nextAvailableRow, nextAvailableRow + columns, 0);
+    }
+
+    void printGame()
+    {
+        // for (int i = rows - 1; i >= 0; --i)
+        for (int i = 0; i < rows; ++i)
+        {
+            for (int j = 0; j < columns; ++j)
+            {
+                std::cout << game[i][j];
+            }
+            std::cout << "\n";
+        }
+    }
+
+    void play(int col)
+    {
+        game[nextAvailableRow[col]][col] = playerSymbol[currentPlayer];
+        lastCoordinatePlayed = math2DVector(nextAvailableRow[col], col);
+        ++nextAvailableRow[col];
+        currentPlayer ^= 1;
+    }
+
+    void start()
+    {
+        bool gameIsFinished = false;
+        currentPlayer = 0;
+        cleanGame();
+        std::cout << "Happy Playing!\n";
+        printGame();
+
+        do
+        {
+            int nextCol;
+            do
+            {
+                std::cout << "Enter your move: (0 to 6):";
+                std::cin >> nextCol;
+            } while (isColumnFilled(nextCol));
+            play(nextCol);
+            std::cout << lastCoordinatePlayed.x << " " << lastCoordinatePlayed.y << "\n";
+            printGame();
+        } while (!lastPlayerWon());
+        std::cout << "We have a winner!\n";
+    }
+};

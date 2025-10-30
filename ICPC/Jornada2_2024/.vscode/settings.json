@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "*.cs": "aspnetcorerazor",
+        "iostream": "cpp",
+        "ios": "cpp",
+        "ostream": "cpp",
+        "set": "cpp",
+        "vector": "cpp",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "queue": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "__bit_reference": "cpp",
+        "cstdint": "cpp"
+    }
+}

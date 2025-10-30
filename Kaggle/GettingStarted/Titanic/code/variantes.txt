@@ -1,0 +1,3 @@
+- drop rows with missing age and drop cabin column
+- drop rows fill cabin column
+- don't drop rows 

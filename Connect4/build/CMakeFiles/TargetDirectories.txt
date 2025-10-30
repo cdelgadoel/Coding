@@ -1,0 +1,3 @@
+/Users/carlosdelgado/Desktop/Coding/Connect4/build/CMakeFiles/run.dir
+/Users/carlosdelgado/Desktop/Coding/Connect4/build/CMakeFiles/edit_cache.dir
+/Users/carlosdelgado/Desktop/Coding/Connect4/build/CMakeFiles/rebuild_cache.dir

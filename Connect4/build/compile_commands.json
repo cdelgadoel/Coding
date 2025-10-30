@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/Users/carlosdelgado/Desktop/Coding/Connect4/build",
+  "command": "/usr/bin/clang++  -I/Users/carlosdelgado/Desktop/Coding/Connect4/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/run.dir/src/Bitboard.cpp.o -c /Users/carlosdelgado/Desktop/Coding/Connect4/src/Bitboard.cpp",
+  "file": "/Users/carlosdelgado/Desktop/Coding/Connect4/src/Bitboard.cpp",
+  "output": "CMakeFiles/run.dir/src/Bitboard.cpp.o"
+},
+{
+  "directory": "/Users/carlosdelgado/Desktop/Coding/Connect4/build",
+  "command": "/usr/bin/clang++  -I/Users/carlosdelgado/Desktop/Coding/Connect4/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/run.dir/src/ConnectFour.cpp.o -c /Users/carlosdelgado/Desktop/Coding/Connect4/src/ConnectFour.cpp",
+  "file": "/Users/carlosdelgado/Desktop/Coding/Connect4/src/ConnectFour.cpp",
+  "output": "CMakeFiles/run.dir/src/ConnectFour.cpp.o"
+},
+{
+  "directory": "/Users/carlosdelgado/Desktop/Coding/Connect4/build",
+  "command": "/usr/bin/clang++  -I/Users/carlosdelgado/Desktop/Coding/Connect4/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/run.dir/src/main.cpp.o -c /Users/carlosdelgado/Desktop/Coding/Connect4/src/main.cpp",
+  "file": "/Users/carlosdelgado/Desktop/Coding/Connect4/src/main.cpp",
+  "output": "CMakeFiles/run.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/carlosdelgado/Desktop/Coding/Connect4/build",
+  "command": "/usr/bin/clang++  -I/Users/carlosdelgado/Desktop/Coding/Connect4/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/run.dir/src/math2DVector.cpp.o -c /Users/carlosdelgado/Desktop/Coding/Connect4/src/math2DVector.cpp",
+  "file": "/Users/carlosdelgado/Desktop/Coding/Connect4/src/math2DVector.cpp",
+  "output": "CMakeFiles/run.dir/src/math2DVector.cpp.o"
+}
+]

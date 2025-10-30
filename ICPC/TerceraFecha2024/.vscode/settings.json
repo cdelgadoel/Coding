@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.cs": "csharp",
+        "iostream": "cpp",
+        "vector": "cpp",
+        "ratio": "cpp",
+        "ios": "cpp",
+        "unordered_set": "cpp",
+        "utility": "cpp"
+    }
+}
